@@ -14,14 +14,14 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-env:
+#env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  TERM: alacritty
+  #TERM: alacritty
 
 window:
   # Window dimensions (changes require restart)
@@ -62,13 +62,13 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background and no title bar buttons
-  decorations: full
+  #decorations: full
 
   # Background opacity
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 1.0
+  opacity: 0.9
 
   # Startup Mode (changes require restart)
   #
@@ -79,7 +79,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  startup_mode: Windowed
+  #startup_mode: Windowed
 
   # Window title
   #title: Alacritty
@@ -94,12 +94,24 @@ window:
     # General application class
     #general: Alacritty
 
-  # Decorations theme variant (Linux/BSD only)
+  # Decorations theme variant
   #
-  # Override the variant of the GTK theme/Wayland client side decorations.
-  # Commonly supported values are `dark` and `light`. Set this to `None` to use
-  # the default theme variant.
+  # Override the variant of the System theme/GTK theme/Wayland client side
+  # decorations. Commonly supported values are `Dark`, `Light`, and `None` for
+  # auto pick-up. Set this to `None` to use the default theme variant.
   #decorations_theme_variant: None
+
+  # Resize increments
+  #
+  # Prefer resizing window by discrete steps equal to cell dimensions.
+  #resize_increments: false
+
+  # Make `Option` key behave as `Alt` (macOS only):
+  #   - OnlyLeft
+  #   - OnlyRight
+  #   - Both
+  #   - None (default)
+  #option_as_alt: None
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -119,10 +131,10 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Fira Mono for Powerline
+    family: Hack Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
-    #style: Regular
+    style: Regular
 
   # Bold font face
   #bold:
@@ -158,7 +170,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 15.0
+  size: 14.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -208,6 +220,7 @@ colors:
     magenta: '0xd3869b' 
     cyan:    '0x8ec07c' 
     white:   '0xebdbb2'
+
 #colors:
   # Default colors
   #primary:
@@ -397,15 +410,15 @@ colors:
   #
   #command: None
 
-selection:
+#selection:
   # This string contains all characters that are used as separators for
   # "semantic words" in Alacritty.
-  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
-  save_to_clipboard: true
+  #save_to_clipboard: false
 
-cursor:
+#cursor:
   # Cursor style
   #style:
     # Cursor shape
@@ -414,7 +427,7 @@ cursor:
     #   - ▇ Block
     #   - _ Underline
     #   - | Beam
-    shape: Block
+    #shape: Block
 
     # Cursor blinking state
     #
@@ -471,9 +484,6 @@ shell:
 # Directory the shell is started in. If this is unset, or `None`, the working
 # directory of the parent process will be used.
 #working_directory: None
-
-# Send ESC (\x1b) before characters when alt is pressed.
-#alt_send_esc: true
 
 # Offer IPC using `alacritty msg` (unix only)
 #ipc_socket: true
@@ -589,7 +599,7 @@ shell:
 #    - Key0-Key9
 #
 #    A full list with available key codes can be found here:
-#    https://docs.rs/glutin/*/glutin/event/enum.VirtualKeyCode.html#variants
+#    https://docs.rs/winit/*/winit/event/enum.VirtualKeyCode.html#variants
 #
 #    Instead of using the name of the keys, the `key` field also supports using
 #    the scancode of the desired key. Scancodes have to be specified as a
@@ -638,6 +648,7 @@ shell:
 #   - Quit
 #       Quit Alacritty.
 #   - ToggleFullscreen
+#   - ToggleMaximized
 #   - SpawnNewInstance
 #       Spawn a new instance of Alacritty.
 #   - CreateNewWindow
@@ -888,7 +899,7 @@ shell:
   #- { key: M,              mods: Command,                    action: Minimize              }
   #- { key: Q,              mods: Command,                    action: Quit                  }
   #- { key: W,              mods: Command,                    action: Quit                  }
-  #- { key: N,              mods: Command,                    action: SpawnNewInstance      }
+  #- { key: N,              mods: Command,                    action: CreateNewWindow       }
   #- { key: F,              mods: Command|Control,            action: ToggleFullscreen      }
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
@@ -910,6 +921,12 @@ shell:
   #   - Debug
   #   - Trace
   #log_level: Warn
+
+  # Renderer override.
+  #   - glsl3
+  #   - gles2
+  #   - gles2_pure
+  #renderer: None
 
   # Print all received window events.
   #print_events: false
