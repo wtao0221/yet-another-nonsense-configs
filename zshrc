@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/noob/.oh-my-zsh"
+export ZSH="/Users/wtao/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -112,32 +112,27 @@ prompt_context() {
 		      prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
 			    fi
 			}
-# chipyard
-# source /home/twang/workspace/chipyard/env.sh
-# source /home/twang/workspace/nanoPU-chipyard/env.sh
+
 export FZF_DEFAULT_OPTS='--height 40% --border'
-
-
-# export M2_HOME="/Users/noob/Downloads/apache-maven-3.9.1"
-# export PATH="${M2_HOME}/bin:${PATH}"
-# export JAVA_HOME=`/usr/libexec/java_home -v1.8.0`
-
-export PATH="/usr/local/opt/llvm/bin:/Users/noob/node_modules/.bin:${PATH}"
-# export XDG_CONFIG_HOME="~/.config"
-alias vim="nvim"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/noob/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/wtao/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/noob/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/noob/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/wtao/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/wtao/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/noob/miniconda3/bin:$PATH"
+        export PATH="/Users/wtao/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+alias vim="nvim"
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
