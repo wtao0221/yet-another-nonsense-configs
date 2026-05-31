@@ -1,5 +1,11 @@
 # Yet Another Nonsense Configs
 
+## tmux
+```bash
+# tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
 ## alacritty 
 alacritty version v0.12.2
 
