@@ -6,8 +6,11 @@
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
-## alacritty 
-alacritty version v0.12.2
+## ghostty
+```
+# remote ssh server xterm info
+infocmp -x xterm-ghostty | ssh user@server 'tic -x -'
+```
 
 ## zsh plugins
 
